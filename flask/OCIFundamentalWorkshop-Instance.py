@@ -77,7 +77,8 @@ list = []
 def read_from_db():
     list.clear()
     for doc in coll.find():
-        list.append({'Name': doc['name'], 'Date': doc['date'], 'Link': doc['link']})
+        ahref = '<a href="' + doc['link'] + '" target="_blank">'+ doc['name'] + '</a>'
+        list.append({'Name': doc['name'], 'Date': doc['date'], 'Link': ahref})
 
 ### Read from db all documents from the collection - End
 
